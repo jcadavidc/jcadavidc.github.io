@@ -1,7 +1,7 @@
 ---
-title: "Julian Cadavid"
+title: "<center>**Sobre Mi**</center>"
 ---
 
 
-## Hola a todos
+### Hola a todos
 
