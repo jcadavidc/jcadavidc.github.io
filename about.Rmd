@@ -1,5 +1,5 @@
 ---
-title: "About This Website"
+title: "<center>**Mis Trabajos**</center>"
 ---
 
-Aquí información sobre mi pagina
+Trabajo final de estadistica descriptiva
