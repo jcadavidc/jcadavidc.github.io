@@ -1,12 +1,14 @@
 name: "my-website"
 output_dir: "."
 navbar:
-  title: "My Website"
+  title: "Julian Esteban Cadavid"
   left:
-    - text: "Home"
+    - text: "Sobre Mi"
       href: index.html
-    - text: "About"
+    - text: "Mis Trabajos"
       href: about.html
+    - text: "Densidades"
+      href: densidades.html
 output:
   html_document:
     theme: spacelab
