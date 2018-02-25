@@ -2,4 +2,23 @@
 title: "<center>**Densidades**</center>"
 ---
 
-Hello, Website!
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##### Se simulan 2000 observaciones 
+```{r}
+y <- rnorm(n=2000) 
+res <- density(y) 
+```
+
+##### Con las observaciones creadas se crea el grafico de densidad y el núcleo de suavización.
+```{r}
+plot(density(y, kernel='gaussian')) 
+```
+
+##### Cambiando el ancho de la banda se obtiene
+```{r}
+plot(density(y, bw=1))
+```
+

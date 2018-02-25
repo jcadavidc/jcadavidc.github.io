@@ -4,12 +4,15 @@ navbar:
   title: "Julian Esteban Cadavid"
   left:
     - text: "Sobre Mi"
+      icon: fa-user
       href: index.html
     - text: "Mis Trabajos"
+      icon: ion-edit
       href: about.html
     - text: "Densidades"
+      icon: ion-stats-bars
       href: densidades.html
 output:
   html_document:
-    theme: spacelab
+    theme: cerulean
     highlight: textmate

@@ -15,13 +15,15 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -97,34 +99,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 52px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 
 .section h2 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 </style>
 
@@ -176,13 +178,25 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Sobre Mi</a>
+  <a href="index.html">
+    <span class="fa fa-user"></span>
+     
+    Sobre Mi
+  </a>
 </li>
 <li>
-  <a href="about.html">Mis Trabajos</a>
+  <a href="about.html">
+    <span class="ion ion-edit"></span>
+     
+    Mis Trabajos
+  </a>
 </li>
 <li>
-  <a href="densidades.html">Densidades</a>
+  <a href="densidades.html">
+    <span class="ion ion-stats-bars"></span>
+     
+    Densidades
+  </a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -203,7 +217,21 @@ $(document).ready(function () {
 </div>
 
 
-<p>Hello, Website!</p>
+<div id="se-simulan-2000-observaciones" class="section level5">
+<h5>Se simulan 2000 observaciones</h5>
+<pre class="r"><code>y &lt;- rnorm(n=2000) 
+res &lt;- density(y) </code></pre>
+</div>
+<div id="con-las-observaciones-creadas-se-crea-el-grafico-de-densidad-y-el-nucleo-de-suavizacion." class="section level5">
+<h5>Con las observaciones creadas se crea el grafico de densidad y el núcleo de suavización.</h5>
+<pre class="r"><code>plot(density(y, kernel=&#39;gaussian&#39;)) </code></pre>
+<p><img src="densidades_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="cambiando-el-ancho-de-la-banda-se-obtiene" class="section level5">
+<h5>Cambiando el ancho de la banda se obtiene</h5>
+<pre class="r"><code>plot(density(y, bw=1))</code></pre>
+<p><img src="densidades_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
 
 
 

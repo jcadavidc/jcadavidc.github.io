@@ -1,5 +1,9 @@
 ---
-title: "<center>**Mis Trabajos**</center>"
+title: "Mis Trabajos"
 ---
 
-Trabajo final de estadistica descriptiva
+<center> 
+##Trabajo final de Estadística Descriptiva y Exploratoria 
+</center>
+
+![](poster.png)
