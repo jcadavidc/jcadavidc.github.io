@@ -12,6 +12,9 @@ navbar:
     - text: "Densidades"
       icon: ion-stats-bars
       href: densidades.html
+    - text: "Interactive"
+      icon: ion-stats-bars
+      href: interactive.html
 output:
   html_document:
     theme: cerulean
