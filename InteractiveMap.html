@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Julian Esteban Cadavid</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-user"></span>
+     
+    Sobre Mi
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="ion ion-edit"></span>
+     
+    Mis Trabajos
+  </a>
+</li>
+<li>
+  <a href="densidades.html">
+    <span class="ion ion-stats-bars"></span>
+     
+    Densidades
+  </a>
+</li>
+</li>
+<li>
+  <a href="interactive.html">
+    <span class="ion ion-stats-bars"></span>
+     
+    Interactive
+  </a>
+</li>
+</li>
+<li>
+  <a href="InteractiveMap.html">
+    <span class="ion ion-stats-bars"></span>
+     
+    Map
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<strong>Interactive</strong>
+</center></h1>
+
+</div>
+
+<style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "vconcat": [{"data": {"name": "data-6b784d7bbc00d42c4867e3fccee60c13"}, "mark": {"type": "bar"}, "encoding": {"x": {"bin": {"maxbins": 8}, "field": "price", "type": "quantitative"}, "y": {"aggregate": "count", "type": "quantitative"}}, "height": 50, "name": "view_81", "width": 600}, {"layer": [{"data": {"name": "data-7bdd32fd9f49d24f2bc96fc0e1ddf6d3"}, "mark": {"type": "geoshape", "fill": "#ddd", "stroke": "#fff", "strokeWidth": 1}, "projection": {"type": "mercator"}}, {"data": {"name": "data-6b784d7bbc00d42c4867e3fccee60c13"}, "mark": {"type": "circle", "opacity": 1, "size": 200}, "encoding": {"color": {"bin": {"maxbins": 2}, "field": "price", "scale": {"range": ["#64CCC5", "#176B87", "#001C30", "001C30"]}, "type": "ordinal"}, "opacity": {"condition": {"test": {"and": [{"param": "Select"}, {"param": "param_8"}]}, "value": 1}, "value": 0}, "size": {"bin": {"maxbins": 3}, "field": "sqft_living", "type": "quantitative"}, "x": {"field": "long", "scale": {"domain": [-122.5, -122.19]}, "type": "quantitative"}, "y": {"field": "lat", "scale": {"domain": [47.51, 47.72]}, "type": "quantitative"}}, "name": "view_80"}], "height": 600, "title": "Which neighborhoods in Seattle have the highest concentration of houses for sale?", "width": 600}], "params": [{"name": "param_8", "select": {"type": "interval", "encodings": ["x"]}, "views": ["view_81", "view_80"]}, {"name": "Select", "select": {"type": "point", "fields": ["bedrooms"]}, "bind": {"bedrooms": {"input": "radio", "options": [1.0, 2.0, 3.0, 4.0, 5.0]}}, "views": ["view_80"]}], "resolve": {"scale": {"color": "independent", "size": "independent"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-6b784d7bbc00d42c4867e3fccee60c13": [{"id": 2487200875, "date": "12/9/2014", "price": 604000.0, "bedrooms": 4, "bathrooms": 3.0, "sqft_living": 1960, "sqft_lot": 5000, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 5, "grade": 7, "sqft_above": 1050, "sqft_basement": 910, "yr_built": 1965, "zipcode": 98136, "lat": 47.5208, "long": -122.393, "sqft_living15": 1360, "sqft_lot15": 5000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 9212900260, "date": "5/27/2014", "price": 468000.0, "bedrooms": 2, "bathrooms": 1.0, "sqft_living": 1160, "sqft_lot": 6000, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 860, "sqft_basement": 300, "yr_built": 1942, "zipcode": 98115, "lat": 47.69, "long": -122.292, "sqft_living15": 1330, "sqft_lot15": 6000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 1175000570, "date": "3/12/2015", "price": 530000.0, "bedrooms": 5, "bathrooms": 2.0, "sqft_living": 1810, "sqft_lot": 4850, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 1810, "sqft_basement": 0, "yr_built": 1900, "zipcode": 98107, "lat": 47.67, "long": -122.394, "sqft_living15": 1360, "sqft_lot15": 4850, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 9297300055, "date": "1/24/2015", "price": 650000.0, "bedrooms": 4, "bathrooms": 3.0, "sqft_living": 2950, "sqft_lot": 5000, "floors": 2.0, "waterfront": 0.0, "view": 3.0, "condition": 3, "grade": 9, "sqft_above": 1980, "sqft_basement": 970, "yr_built": 1979, "zipcode": 98126, "lat": 47.5714, "long": -122.375, "sqft_living15": 2140, "sqft_lot15": 4000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 6865200140, "date": "5/29/2014", "price": 485000.0, "bedrooms": 4, "bathrooms": 1.0, "sqft_living": 1600, "sqft_lot": 4300, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 1600, "sqft_basement": 0, "yr_built": 1916, "zipcode": 98103, "lat": 47.6648, "long": -122.343, "sqft_living15": 1610, "sqft_lot15": 4300, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 6300500875, "date": "5/14/2014", "price": 385000.0, "bedrooms": 4, "bathrooms": 1.75, "sqft_living": 1620, "sqft_lot": 4980, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 860, "sqft_basement": 760, "yr_built": 1947, "zipcode": 98133, "lat": 47.7025, "long": -122.341, "sqft_living15": 1400, "sqft_lot15": 4980, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 1794500383, "date": "6/26/2014", "price": 937000.0, "bedrooms": 3, "bathrooms": 1.75, "sqft_living": 2450, "sqft_lot": 2691, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 1750, "sqft_basement": 700, "yr_built": 1915, "zipcode": 98119, "lat": 47.6386, "long": -122.36, "sqft_living15": 1760, "sqft_lot15": 3573, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 3303700376, "date": "12/1/2014", "price": 667000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1400, "sqft_lot": 1581, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 5, "grade": 8, "sqft_above": 1400, "sqft_basement": 0, "yr_built": 1909, "zipcode": 98112, "lat": 47.6221, "long": -122.314, "sqft_living15": 1860, "sqft_lot15": 3861, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 5101402488, "date": "6/24/2014", "price": 438000.0, "bedrooms": 3, "bathrooms": 1.75, "sqft_living": 1520, "sqft_lot": 6380, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 790, "sqft_basement": 730, "yr_built": 1948, "zipcode": 98115, "lat": 47.695, "long": -122.304, "sqft_living15": 1520, "sqft_lot15": 6235, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 461000390, "date": "6/24/2014", "price": 687500.0, "bedrooms": 4, "bathrooms": 1.75, "sqft_living": 2330, "sqft_lot": 5000, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 1510, "sqft_basement": 820, "yr_built": 1929, "zipcode": 98117, "lat": 47.6823, "long": -122.368, "sqft_living15": 1460, "sqft_lot15": 5000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 7589200193, "date": "11/10/2014", "price": 535000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1090, "sqft_lot": 3000, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 8, "sqft_above": 1090, "sqft_basement": 0, "yr_built": 1929, "zipcode": 98117, "lat": 47.6889, "long": -122.375, "sqft_living15": 1570, "sqft_lot15": 5080, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 9547205180, "date": "6/13/2014", "price": 696000.0, "bedrooms": 3, "bathrooms": 2.5, "sqft_living": 2300, "sqft_lot": 3060, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 1510, "sqft_basement": 790, "yr_built": 1930, "zipcode": 98115, "lat": 47.6827, "long": -122.31, "sqft_living15": 1590, "sqft_lot15": 3264, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 2, "yr_renovated_null": 0, "yr_renovated_ind": 1}, {"id": 2768000400, "date": "12/30/2014", "price": 640000.0, "bedrooms": 4, "bathrooms": 2.0, "sqft_living": 2360, "sqft_lot": 6000, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 8, "sqft_above": 2360, "sqft_basement": 0, "yr_built": 1904, "zipcode": 98107, "lat": 47.6702, "long": -122.362, "sqft_living15": 1730, "sqft_lot15": 4700, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 9270200160, "date": "10/28/2014", "price": 685000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1570, "sqft_lot": 2280, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 1570, "sqft_basement": 0, "yr_built": 1922, "zipcode": 98119, "lat": 47.6413, "long": -122.364, "sqft_living15": 1580, "sqft_lot15": 2640, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 9215400105, "date": "4/28/2015", "price": 450000.0, "bedrooms": 3, "bathrooms": 1.75, "sqft_living": 1250, "sqft_lot": 5963, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 1250, "sqft_basement": 0, "yr_built": 1953, "zipcode": 98115, "lat": 47.6796, "long": -122.301, "sqft_living15": 970, "sqft_lot15": 5100, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 7518505990, "date": "12/31/2014", "price": 600000.0, "bedrooms": 3, "bathrooms": 1.75, "sqft_living": 1410, "sqft_lot": 4080, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 1000, "sqft_basement": 410, "yr_built": 1950, "zipcode": 98117, "lat": 47.6808, "long": -122.384, "sqft_living15": 1410, "sqft_lot15": 4080, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 3626039271, "date": "2/5/2015", "price": 585000.0, "bedrooms": 2, "bathrooms": 1.75, "sqft_living": 1980, "sqft_lot": 8550, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 990, "sqft_basement": 990, "yr_built": 1981, "zipcode": 98117, "lat": 47.6989, "long": -122.369, "sqft_living15": 1480, "sqft_lot15": 6738, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 4217401195, "date": "3/3/2015", "price": 920000.0, "bedrooms": 5, "bathrooms": 2.25, "sqft_living": 2730, "sqft_lot": 6000, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 2130, "sqft_basement": 600, "yr_built": 1927, "zipcode": 98105, "lat": 47.6571, "long": -122.281, "sqft_living15": 2730, "sqft_lot15": 6000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 9822700295, "date": "5/12/2014", "price": 885000.0, "bedrooms": 4, "bathrooms": 2.5, "sqft_living": 2830, "sqft_lot": 5000, "floors": 2.0, "waterfront": 1.0, "view": 0.0, "condition": 3, "grade": 9, "sqft_above": 2830, "sqft_basement": 0, "yr_built": 1995, "zipcode": 98105, "lat": 47.6597, "long": -122.29, "sqft_living15": 1950, "sqft_lot15": 5000, "waterfront_null": 1, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 9528102996, "date": "12/7/2014", "price": 549000.0, "bedrooms": 3, "bathrooms": 1.75, "sqft_living": 1540, "sqft_lot": 1044, "floors": 3.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 1540, "sqft_basement": 0, "yr_built": 2014, "zipcode": 98115, "lat": 47.6765, "long": -122.32, "sqft_living15": 1580, "sqft_lot15": 3090, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 1189001180, "date": "6/3/2014", "price": 425000.0, "bedrooms": 3, "bathrooms": 2.25, "sqft_living": 1660, "sqft_lot": 6000, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 1110, "sqft_basement": 550, "yr_built": 1979, "zipcode": 98122, "lat": 47.6113, "long": -122.297, "sqft_living15": 1440, "sqft_lot15": 4080, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 3253500160, "date": "11/20/2014", "price": 317625.0, "bedrooms": 3, "bathrooms": 2.75, "sqft_living": 2770, "sqft_lot": 3809, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 5, "grade": 7, "sqft_above": 1770, "sqft_basement": 1000, "yr_built": 1925, "zipcode": 98144, "lat": 47.5747, "long": -122.304, "sqft_living15": 1440, "sqft_lot15": 4000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 2391600320, "date": "4/20/2015", "price": 480000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1040, "sqft_lot": 5060, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 1040, "sqft_basement": 0, "yr_built": 1941, "zipcode": 98116, "lat": 47.5636, "long": -122.394, "sqft_living15": 890, "sqft_lot15": 5060, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 6300000287, "date": "6/9/2014", "price": 410000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1410, "sqft_lot": 5060, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 910, "sqft_basement": 500, "yr_built": 1956, "zipcode": 98133, "lat": 47.7073, "long": -122.34, "sqft_living15": 1130, "sqft_lot15": 5693, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 9418400240, "date": "10/28/2014", "price": 355000.0, "bedrooms": 2, "bathrooms": 1.0, "sqft_living": 2020, "sqft_lot": 6720, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 1010, "sqft_basement": 1010, "yr_built": 1948, "zipcode": 98118, "lat": 47.5474, "long": -122.291, "sqft_living15": 1720, "sqft_lot15": 6720, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 4232902595, "date": "11/14/2014", "price": 940000.0, "bedrooms": 3, "bathrooms": 1.5, "sqft_living": 2140, "sqft_lot": 3600, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 9, "sqft_above": 1900, "sqft_basement": 240, "yr_built": 1925, "zipcode": 98119, "lat": 47.6337, "long": -122.365, "sqft_living15": 2020, "sqft_lot15": 4800, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 3869900162, "date": "9/4/2014", "price": 335000.0, "bedrooms": 2, "bathrooms": 1.75, "sqft_living": 1030, "sqft_lot": 1066, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 765, "sqft_basement": 265, "yr_built": 2006, "zipcode": 98136, "lat": 47.5394, "long": -122.387, "sqft_living15": 1030, "sqft_lot15": 1106, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 5036300431, "date": "3/11/2015", "price": 1100000.0, "bedrooms": 5, "bathrooms": 2.75, "sqft_living": 3520, "sqft_lot": 6353, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 10, "sqft_above": 3520, "sqft_basement": 0, "yr_built": 2001, "zipcode": 98199, "lat": 47.6506, "long": -122.391, "sqft_living15": 2520, "sqft_lot15": 6250, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 6021501535, "date": "7/25/2014", "price": 430000.0, "bedrooms": 3, "bathrooms": 1.5, "sqft_living": 1580, "sqft_lot": 5000, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 1290, "sqft_basement": 290, "yr_built": 1939, "zipcode": 98117, "lat": 47.687, "long": -122.386, "sqft_living15": 1570, "sqft_lot15": 4500, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 6021501535, "date": "12/23/2014", "price": 700000.0, "bedrooms": 3, "bathrooms": 1.5, "sqft_living": 1580, "sqft_lot": 5000, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 1290, "sqft_basement": 290, "yr_built": 1939, "zipcode": 98117, "lat": 47.687, "long": -122.386, "sqft_living15": 1570, "sqft_lot15": 4500, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 1952200240, "date": "6/11/2014", "price": 850830.0, "bedrooms": 3, "bathrooms": 2.5, "sqft_living": 2070, "sqft_lot": 13241, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 5, "grade": 9, "sqft_above": 1270, "sqft_basement": 800, "yr_built": 1910, "zipcode": 98102, "lat": 47.6415, "long": -122.315, "sqft_living15": 2200, "sqft_lot15": 4500, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 5200100125, "date": "10/27/2014", "price": 555000.0, "bedrooms": 3, "bathrooms": 2.0, "sqft_living": 1980, "sqft_lot": 3478, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 1440, "sqft_basement": 540, "yr_built": 1929, "zipcode": 98117, "lat": 47.6775, "long": -122.372, "sqft_living15": 1610, "sqft_lot15": 3478, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 546000875, "date": "5/23/2014", "price": 460000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1670, "sqft_lot": 4005, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 1170, "sqft_basement": 500, "yr_built": 1939, "zipcode": 98117, "lat": 47.6878, "long": -122.38, "sqft_living15": 1240, "sqft_lot15": 4005, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 3362400511, "date": "3/4/2015", "price": 570000.0, "bedrooms": 3, "bathrooms": 1.75, "sqft_living": 1260, "sqft_lot": 3328, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 5, "grade": 6, "sqft_above": 700, "sqft_basement": 560, "yr_built": 1905, "zipcode": 98103, "lat": 47.6823, "long": -122.349, "sqft_living15": 1380, "sqft_lot15": 3536, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 6126500060, "date": "11/24/2014", "price": 329950.0, "bedrooms": 3, "bathrooms": 1.75, "sqft_living": 2080, "sqft_lot": 5969, "floors": 1.0, "waterfront": 0.0, "view": 2.0, "condition": 3, "grade": 7, "sqft_above": 1080, "sqft_basement": 1000, "yr_built": 1971, "zipcode": 98108, "lat": 47.5474, "long": -122.295, "sqft_living15": 2090, "sqft_lot15": 5500, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 3626039325, "date": "11/21/2014", "price": 740500.0, "bedrooms": 3, "bathrooms": 3.5, "sqft_living": 4380, "sqft_lot": 6350, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 2780, "sqft_basement": 1600, "yr_built": 1900, "zipcode": 98117, "lat": 47.6981, "long": -122.368, "sqft_living15": 1830, "sqft_lot15": 6350, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 3362400431, "date": "6/26/2014", "price": 518500.0, "bedrooms": 3, "bathrooms": 3.5, "sqft_living": 1590, "sqft_lot": 1102, "floors": 3.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 1590, "sqft_basement": 0, "yr_built": 2010, "zipcode": 98103, "lat": 47.6824, "long": -122.347, "sqft_living15": 1620, "sqft_lot15": 3166, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 1695900060, "date": "5/11/2015", "price": 535000.0, "bedrooms": 4, "bathrooms": 1.0, "sqft_living": 1610, "sqft_lot": 2982, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 1610, "sqft_basement": 0, "yr_built": 1925, "zipcode": 98144, "lat": 47.587, "long": -122.294, "sqft_living15": 1610, "sqft_lot15": 4040, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 3626039187, "date": "4/6/2015", "price": 395000.0, "bedrooms": 2, "bathrooms": 1.0, "sqft_living": 770, "sqft_lot": 6000, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 6, "sqft_above": 770, "sqft_basement": 0, "yr_built": 1953, "zipcode": 98117, "lat": 47.6999, "long": -122.364, "sqft_living15": 1710, "sqft_lot15": 6000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 3524049083, "date": "11/4/2014", "price": 445000.0, "bedrooms": 4, "bathrooms": 1.75, "sqft_living": 2100, "sqft_lot": 4400, "floors": 1.5, "waterfront": 1.0, "view": 0.0, "condition": 5, "grade": 7, "sqft_above": 1720, "sqft_basement": 380, "yr_built": 1924, "zipcode": 98118, "lat": 47.5299, "long": -122.266, "sqft_living15": 1850, "sqft_lot15": 4400, "waterfront_null": 1, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 2331300505, "date": "6/13/2014", "price": 822500.0, "bedrooms": 5, "bathrooms": 3.5, "sqft_living": 2320, "sqft_lot": 4960, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 5, "grade": 7, "sqft_above": 1720, "sqft_basement": 600, "yr_built": 1926, "zipcode": 98103, "lat": 47.6763, "long": -122.352, "sqft_living15": 1700, "sqft_lot15": 4960, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 2767602356, "date": "1/26/2015", "price": 675000.0, "bedrooms": 4, "bathrooms": 3.5, "sqft_living": 2140, "sqft_lot": 2278, "floors": 3.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 9, "sqft_above": 2140, "sqft_basement": 0, "yr_built": 2005, "zipcode": 98107, "lat": 47.6734, "long": -122.38, "sqft_living15": 1540, "sqft_lot15": 2285, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 2767603505, "date": "5/7/2014", "price": 519950.0, "bedrooms": 3, "bathrooms": 2.25, "sqft_living": 1170, "sqft_lot": 1249, "floors": 3.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 1170, "sqft_basement": 0, "yr_built": 2014, "zipcode": 98107, "lat": 47.6722, "long": -122.381, "sqft_living15": 1350, "sqft_lot15": 1310, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 4232901525, "date": "6/27/2014", "price": 665000.0, "bedrooms": 2, "bathrooms": 1.0, "sqft_living": 1110, "sqft_lot": 3200, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 1110, "sqft_basement": 0, "yr_built": 1925, "zipcode": 98119, "lat": 47.6338, "long": -122.358, "sqft_living15": 1170, "sqft_lot15": 3600, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 809001525, "date": "6/25/2014", "price": 890000.0, "bedrooms": 4, "bathrooms": 1.0, "sqft_living": 2550, "sqft_lot": 4000, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 2370, "sqft_basement": 180, "yr_built": 1905, "zipcode": 98109, "lat": 47.6354, "long": -122.353, "sqft_living15": 2200, "sqft_lot15": 4000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 1994200024, "date": "11/4/2014", "price": 511000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1430, "sqft_lot": 3455, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 980, "sqft_basement": 450, "yr_built": 1947, "zipcode": 98103, "lat": 47.6873, "long": -122.336, "sqft_living15": 1450, "sqft_lot15": 4599, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 3362900810, "date": "8/20/2014", "price": 532170.0, "bedrooms": 3, "bathrooms": 2.0, "sqft_living": 1360, "sqft_lot": 3090, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 1360, "sqft_basement": 0, "yr_built": 1990, "zipcode": 98103, "lat": 47.6838, "long": -122.353, "sqft_living15": 1500, "sqft_lot15": 3090, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 1324300398, "date": "4/9/2015", "price": 560000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1110, "sqft_lot": 5000, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 1110, "sqft_basement": 0, "yr_built": 1947, "zipcode": 98107, "lat": 47.655, "long": -122.359, "sqft_living15": 1420, "sqft_lot15": 5000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 7920100045, "date": "5/16/2014", "price": 350000.0, "bedrooms": 1, "bathrooms": 1.0, "sqft_living": 700, "sqft_lot": 5100, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 700, "sqft_basement": 0, "yr_built": 1942, "zipcode": 98115, "lat": 47.679, "long": -122.3, "sqft_living15": 1010, "sqft_lot15": 5100, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 7234600798, "date": "2/10/2015", "price": 425000.0, "bedrooms": 3, "bathrooms": 2.5, "sqft_living": 1120, "sqft_lot": 1100, "floors": 2.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 820, "sqft_basement": 300, "yr_built": 2008, "zipcode": 98122, "lat": 47.6106, "long": -122.31, "sqft_living15": 1590, "sqft_lot15": 1795, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 3881900445, "date": "7/9/2014", "price": 399950.0, "bedrooms": 5, "bathrooms": 2.75, "sqft_living": 1970, "sqft_lot": 5400, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 1320, "sqft_basement": 650, "yr_built": 1986, "zipcode": 98144, "lat": 47.5868, "long": -122.308, "sqft_living15": 1280, "sqft_lot15": 2150, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 2254502445, "date": "5/30/2014", "price": 385000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1220, "sqft_lot": 4800, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 6, "sqft_above": 1220, "sqft_basement": 0, "yr_built": 1901, "zipcode": 98122, "lat": 47.6101, "long": -122.307, "sqft_living15": 1200, "sqft_lot15": 4800, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 8123100045, "date": "4/14/2015", "price": 470000.0, "bedrooms": 4, "bathrooms": 3.0, "sqft_living": 2380, "sqft_lot": 5125, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 4, "grade": 7, "sqft_above": 1680, "sqft_basement": 700, "yr_built": 1925, "zipcode": 98126, "lat": 47.5384, "long": -122.376, "sqft_living15": 1410, "sqft_lot15": 5375, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 2264500350, "date": "4/18/2015", "price": 615000.0, "bedrooms": 4, "bathrooms": 1.0, "sqft_living": 1330, "sqft_lot": 2400, "floors": 1.5, "waterfront": 1.0, "view": 0.0, "condition": 4, "grade": 6, "sqft_above": 1330, "sqft_basement": 0, "yr_built": 1901, "zipcode": 98103, "lat": 47.65, "long": -122.34, "sqft_living15": 1330, "sqft_lot15": 4400, "waterfront_null": 1, "waterfront_ind": 0, "yr_renovated_scheme1": 1, "yr_renovated_null": 1, "yr_renovated_ind": 0}, {"id": 7549802535, "date": "11/11/2014", "price": 423000.0, "bedrooms": 4, "bathrooms": 2.0, "sqft_living": 1970, "sqft_lot": 6480, "floors": 1.5, "waterfront": 0.0, "view": 0.0, "condition": 5, "grade": 7, "sqft_above": 1130, "sqft_basement": 840, "yr_built": 1920, "zipcode": 98108, "lat": 47.5511, "long": -122.312, "sqft_living15": 1500, "sqft_lot15": 6480, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 3278600320, "date": "7/23/2014", "price": 465000.0, "bedrooms": 3, "bathrooms": 2.5, "sqft_living": 2150, "sqft_lot": 4084, "floors": 2.0, "waterfront": 1.0, "view": 0.0, "condition": 3, "grade": 8, "sqft_above": 2150, "sqft_basement": 0, "yr_built": 2007, "zipcode": 98126, "lat": 47.5488, "long": -122.372, "sqft_living15": 1750, "sqft_lot15": 2385, "waterfront_null": 1, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}, {"id": 7551300060, "date": "7/16/2014", "price": 470000.0, "bedrooms": 3, "bathrooms": 1.0, "sqft_living": 1010, "sqft_lot": 5000, "floors": 1.0, "waterfront": 0.0, "view": 0.0, "condition": 3, "grade": 7, "sqft_above": 1010, "sqft_basement": 0, "yr_built": 1952, "zipcode": 98107, "lat": 47.675, "long": -122.394, "sqft_living15": 1680, "sqft_lot15": 5000, "waterfront_null": 0, "waterfront_ind": 0, "yr_renovated_scheme1": 0, "yr_renovated_null": 0, "yr_renovated_ind": 0}], "data-7bdd32fd9f49d24f2bc96fc0e1ddf6d3": [{"STATEFP": "1400000US53033003000", "COUNTYF": "033", "TRACTCE": "003000", "AFFGEOI": "1400000US53033003000", "GEOID": "53033003000", "NAME": "30", "LSAD": "CT", "ALAND": 1493249, "AWATER": 0, "rowID": 1, "CRA_NAM": "Whittier Heights", "NEIGHBO": "Ballard", "PUMA5CE": 11601, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.366169, 47.672347], [-122.366179, 47.668652], [-122.36621, 47.65927], [-122.365038, 47.657759], [-122.367132, 47.657803], [-122.367339, 47.65642], [-122.376224, 47.659353], [-122.380401, 47.660075], [-122.38744, 47.66322], [-122.39122, 47.663839], [-122.393682, 47.66368], [-122.402046, 47.666072], [-122.405335, 47.668026], [-122.406673, 47.670744], [-122.4092836, 47.6726729], [-122.40966, 47.676224], [-122.4050017, 47.6867203], [-122.403841, 47.689419], [-122.406241, 47.693019], [-122.403441, 47.697719], [-122.393248, 47.701602], [-122.385655, 47.704542], [-122.38044, 47.709119], [-122.381139, 47.712059], [-122.3798679, 47.7132654], [-122.369925, 47.711084], [-122.367703, 47.711675], [-122.364579, 47.709331], [-122.360817, 47.708741], [-122.360868, 47.712361], [-122.350208, 47.712332], [-122.350109, 47.706503], [-122.350075, 47.705066], [-122.355454, 47.705082], [-122.374105, 47.695617], [-122.374104, 47.690619], [-122.365994, 47.690654], [-122.366038, 47.679551], [-122.366169, 47.672347]]]]}}, {"STATEFP": "1400000US53033005801", "COUNTYF": "033", "TRACTCE": "005801", "AFFGEOI": "1400000US53033005801", "GEOID": "53033005801", "NAME": "58.01", "LSAD": "CT", "ALAND": 1814668, "AWATER": 264894, "rowID": 2, "CRA_NAM": "Interbay", "NEIGHBO": "Magnolia/Queen Anne", "PUMA5CE": 11603, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.351489, 47.624568], [-122.347648, 47.624442], [-122.347605, 47.620714], [-122.351362, 47.618585], [-122.359569, 47.618784], [-122.361113, 47.619869], [-122.3618236, 47.6187252], [-122.364501, 47.620342], [-122.370174, 47.625183], [-122.377939, 47.62652], [-122.383739, 47.62632], [-122.383991, 47.631875], [-122.3896343, 47.6306239], [-122.391835, 47.629953], [-122.3954, 47.630594], [-122.40424, 47.63392], [-122.414645, 47.639766], [-122.418271, 47.644445], [-122.41784, 47.648419], [-122.4205171, 47.6518574], [-122.421367, 47.652949], [-122.429841, 47.658919], [-122.436941, 47.661719], [-122.425506, 47.664709], [-122.41584, 47.670622], [-122.409185, 47.671743], [-122.4092836, 47.6726729], [-122.406673, 47.670744], [-122.405335, 47.668026], [-122.402046, 47.666072], [-122.393682, 47.66368], [-122.39122, 47.663839], [-122.38744, 47.66322], [-122.380401, 47.660075], [-122.376224, 47.659353], [-122.367339, 47.65642], [-122.360539, 47.65292], [-122.354463, 47.649932], [-122.347233, 47.646796], [-122.338338, 47.63952], [-122.338438, 47.63802], [-122.338137, 47.62642], [-122.33859, 47.625731], [-122.339875, 47.625424], [-122.350176, 47.625431], [-122.351489, 47.624568]]]]}}, {"STATEFP": "1400000US53033007600", "COUNTYF": "033", "TRACTCE": "007600", "AFFGEOI": "1400000US53033007600", "GEOID": "53033007600", "NAME": "76", "LSAD": "CT", "ALAND": 571879, "AWATER": 0, "rowID": 3, "CRA_NAM": "Miller Park", "NEIGHBO": "East", "PUMA5CE": 11604, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.285036, 47.64752], [-122.256908, 47.647229], [-122.2591, 47.642636], [-122.261091, 47.628694], [-122.262238, 47.624776], [-122.273794, 47.625547], [-122.281009, 47.626328], [-122.282586, 47.625369], [-122.284476, 47.62613], [-122.285516, 47.622513], [-122.286816, 47.624392], [-122.291053, 47.62495], [-122.2925, 47.625977], [-122.293448, 47.628324], [-122.29243, 47.632279], [-122.294475, 47.634834], [-122.293813, 47.63825], [-122.294313, 47.640733], [-122.292365, 47.642124], [-122.289644, 47.64162], [-122.285326, 47.642459], [-122.285036, 47.64752]]], [[[-122.312782, 47.61291], [-122.312833, 47.610377], [-122.312879, 47.601685], [-122.316783, 47.601692], [-122.320739, 47.601699], [-122.324516, 47.601705], [-122.327658, 47.601715], [-122.331148, 47.605837], [-122.337362, 47.612679], [-122.332952, 47.614519], [-122.328848, 47.61626], [-122.327882, 47.616632], [-122.327855, 47.618495], [-122.32814, 47.624904], [-122.326605, 47.625117], [-122.3266, 47.626961], [-122.322369, 47.628666], [-122.322339, 47.6304], [-122.320211, 47.630488], [-122.319936, 47.633549], [-122.321152, 47.635025], [-122.321354, 47.639541], [-122.316037, 47.639557], [-122.313588, 47.637411], [-122.312498, 47.632332], [-122.299428, 47.632264], [-122.29901, 47.629644], [-122.295117, 47.626668], [-122.295529, 47.625139], [-122.302421, 47.625198], [-122.302549, 47.619169], [-122.304771, 47.618496], [-122.312744, 47.618519], [-122.312782, 47.61291]]]]}}, {"STATEFP": "1400000US53033000200", "COUNTYF": "033", "TRACTCE": "000200", "AFFGEOI": "1400000US53033000200", "GEOID": "53033000200", "NAME": "2", "LSAD": "CT", "ALAND": 3286278, "AWATER": 0, "rowID": 4, "CRA_NAM": "Olympic Hills/Victory Heights", "NEIGHBO": "North", "PUMA5CE": 11602, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.290876, 47.704783], [-122.290704, 47.70112], [-122.302553, 47.70117], [-122.303319, 47.70027], [-122.3056, 47.697241], [-122.305606, 47.692561], [-122.308171, 47.690311], [-122.312233, 47.690339], [-122.313445, 47.688516], [-122.317586, 47.688549], [-122.317617, 47.690367], [-122.324341, 47.690406], [-122.329033, 47.693527], [-122.328889, 47.690246], [-122.333221, 47.690519], [-122.333805, 47.695945], [-122.334982, 47.697769], [-122.335042, 47.701523], [-122.333904, 47.703218], [-122.333963, 47.706848], [-122.334058, 47.712289], [-122.328181, 47.712312], [-122.327164, 47.713589], [-122.323383, 47.712231], [-122.312435, 47.712165], [-122.31268, 47.719436], [-122.318134, 47.719743], [-122.323593, 47.719484], [-122.323566, 47.723093], [-122.323589, 47.734052], [-122.301955, 47.733828], [-122.29652, 47.733784], [-122.274368, 47.73349], [-122.273588, 47.726928], [-122.271223, 47.718857], [-122.269138, 47.714124], [-122.265263, 47.708068], [-122.260725, 47.702264], [-122.255062, 47.696866], [-122.258708, 47.697694], [-122.272336, 47.69732], [-122.271836, 47.69462], [-122.276689, 47.696155], [-122.277655, 47.6974], [-122.277652, 47.703881], [-122.278314, 47.705077], [-122.280939, 47.704663], [-122.290876, 47.704783]]]]}}, {"STATEFP": "1400000US53033009300", "COUNTYF": "033", "TRACTCE": "009300", "AFFGEOI": "1400000US53033009300", "GEOID": "53033009300", "NAME": "93", "LSAD": "CT", "ALAND": 9429073, "AWATER": 719985, "rowID": 5, "CRA_NAM": "Duwamish/SODO", "NEIGHBO": "Greater Duwamish", "PUMA5CE": 11605, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.278305, 47.531541], [-122.278083, 47.528902], [-122.276405, 47.52331], [-122.271506, 47.519046], [-122.270023, 47.517149], [-122.270069, 47.509663], [-122.275411, 47.509784], [-122.275432, 47.506927], [-122.278341, 47.507987], [-122.278547, 47.509855], [-122.29134, 47.510146], [-122.291296, 47.524463], [-122.29365, 47.52446], [-122.300501, 47.524453], [-122.300272, 47.52798], [-122.305172, 47.531678], [-122.317958, 47.531767], [-122.31515, 47.530022], [-122.317576, 47.529436], [-122.317554, 47.52821], [-122.311887, 47.526583], [-122.309972, 47.524754], [-122.309671, 47.522145], [-122.317656, 47.522222], [-122.317526, 47.518725], [-122.325879, 47.518691], [-122.325876, 47.52092], [-122.331904, 47.520926], [-122.33436, 47.520818], [-122.334818, 47.525424], [-122.333742, 47.526661], [-122.334698, 47.530153], [-122.334699, 47.534407], [-122.336487, 47.534293], [-122.337025, 47.53736], [-122.342183, 47.540351], [-122.33918, 47.540135], [-122.335074, 47.542687], [-122.338436, 47.546222], [-122.342737, 47.55622], [-122.347237, 47.56302], [-122.347438, 47.565328], [-122.344632, 47.572209], [-122.344428, 47.57392], [-122.3447124, 47.5906889], [-122.342937, 47.59122], [-122.339571, 47.59922], [-122.327669, 47.599193], [-122.327718, 47.59581], [-122.317257, 47.595819], [-122.306184, 47.59589], [-122.306246, 47.593058], [-122.302427, 47.593073], [-122.302502, 47.591891], [-122.302912, 47.584499], [-122.300194, 47.581026], [-122.296632, 47.576357], [-122.296812, 47.571975], [-122.296855, 47.566492], [-122.293365, 47.560813], [-122.289119, 47.553446], [-122.285554, 47.54605], [-122.278305, 47.531541]]]]}}, {"STATEFP": "1400000US53033010300", "COUNTYF": "033", "TRACTCE": "010300", "AFFGEOI": "1400000US53033010300", "GEOID": "53033010300", "NAME": "103", "LSAD": "CT", "ALAND": 1660254, "AWATER": 0, "rowID": 6, "CRA_NAM": "Columbia City", "NEIGHBO": "Southeast", "PUMA5CE": 11604, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.270069, 47.509663], [-122.270023, 47.517149], [-122.271506, 47.519046], [-122.276405, 47.52331], [-122.278083, 47.528902], [-122.278305, 47.531541], [-122.285554, 47.54605], [-122.289119, 47.553446], [-122.293365, 47.560813], [-122.296855, 47.566492], [-122.296812, 47.571975], [-122.296632, 47.576357], [-122.300194, 47.581026], [-122.302912, 47.584499], [-122.302502, 47.591891], [-122.291445, 47.592132], [-122.290426, 47.591151], [-122.273032, 47.590848], [-122.266327, 47.591805], [-122.266821, 47.586371], [-122.266241, 47.582742], [-122.264156, 47.578503], [-122.261153, 47.576115], [-122.258604, 47.574925], [-122.25116, 47.572682], [-122.24578, 47.569033], [-122.244154, 47.567405], [-122.241698, 47.563849], [-122.240388, 47.560026], [-122.240575, 47.554038], [-122.243386, 47.547974], [-122.246748, 47.544389], [-122.253022, 47.539516], [-122.254287, 47.537457], [-122.254699, 47.532185], [-122.253544, 47.529103], [-122.251192, 47.525962], [-122.246099, 47.522571], [-122.240322, 47.519865], [-122.235699, 47.517769], [-122.219822, 47.509801], [-122.237053, 47.509524], [-122.247146, 47.509734], [-122.246079, 47.507236], [-122.245635, 47.503056], [-122.249033, 47.502421], [-122.240828, 47.502227], [-122.24087, 47.499245], [-122.249635, 47.499343], [-122.250814, 47.502831], [-122.259515, 47.502537], [-122.259643, 47.495601], [-122.270302, 47.495543], [-122.270069, 47.509663]]]]}}, {"STATEFP": "1400000US53033007900", "COUNTYF": "033", "TRACTCE": "007900", "AFFGEOI": "1400000US53033007900", "GEOID": "53033007900", "NAME": "79", "LSAD": "CT", "ALAND": 698477, "AWATER": 0, "rowID": 7, "CRA_NAM": "Central Area/Squire Park", "NEIGHBO": "Central", "PUMA5CE": 11604, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.265147, 47.601321], [-122.266327, 47.591805], [-122.273032, 47.590848], [-122.290426, 47.591151], [-122.291445, 47.592132], [-122.302502, 47.591891], [-122.302427, 47.593073], [-122.306246, 47.593058], [-122.306184, 47.59589], [-122.317257, 47.595819], [-122.316783, 47.601692], [-122.312879, 47.601685], [-122.312833, 47.610377], [-122.312782, 47.61291], [-122.312744, 47.618519], [-122.304771, 47.618496], [-122.302549, 47.619169], [-122.302421, 47.625198], [-122.295529, 47.625139], [-122.295119, 47.624205], [-122.2925, 47.625977], [-122.291053, 47.62495], [-122.286816, 47.624392], [-122.285516, 47.622513], [-122.284476, 47.62613], [-122.282586, 47.625369], [-122.281009, 47.626328], [-122.273794, 47.625547], [-122.262238, 47.624776], [-122.263651, 47.613115], [-122.265147, 47.601321]]]]}}, {"STATEFP": "1400000US53033001300", "COUNTYF": "033", "TRACTCE": "001300", "AFFGEOI": "1400000US53033001300", "GEOID": "53033001300", "NAME": "13", "LSAD": "CT", "ALAND": 1183904, "AWATER": 0, "rowID": 8, "CRA_NAM": "Licton Springs", "NEIGHBO": "Northwest", "PUMA5CE": 11601, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.317489, 47.683061], [-122.317365, 47.675828], [-122.317365, 47.672013], [-122.328214, 47.67228], [-122.328267, 47.667903], [-122.329541, 47.667902], [-122.328269, 47.665001], [-122.336411, 47.665033], [-122.347234, 47.664991], [-122.355412, 47.665004], [-122.357137, 47.66503], [-122.357361, 47.668674], [-122.366179, 47.668652], [-122.366169, 47.672347], [-122.366038, 47.679551], [-122.365994, 47.690654], [-122.374104, 47.690619], [-122.374105, 47.695617], [-122.355454, 47.705082], [-122.350075, 47.705066], [-122.350109, 47.706503], [-122.350208, 47.712332], [-122.360868, 47.712361], [-122.360817, 47.708741], [-122.364579, 47.709331], [-122.367703, 47.711675], [-122.369925, 47.711084], [-122.3798679, 47.7132654], [-122.37644, 47.716519], [-122.376284, 47.72259], [-122.37314, 47.729219], [-122.3748802, 47.734164], [-122.360931, 47.734139], [-122.345211, 47.734127], [-122.323589, 47.734052], [-122.323566, 47.723093], [-122.323593, 47.719484], [-122.318134, 47.719743], [-122.31268, 47.719436], [-122.312435, 47.712165], [-122.323383, 47.712231], [-122.327164, 47.713589], [-122.328181, 47.712312], [-122.334058, 47.712289], [-122.333963, 47.706848], [-122.333904, 47.703218], [-122.335042, 47.701523], [-122.334982, 47.697769], [-122.333805, 47.695945], [-122.333221, 47.690519], [-122.328889, 47.690246], [-122.329033, 47.693527], [-122.324341, 47.690406], [-122.317617, 47.690367], [-122.317586, 47.688549], [-122.317489, 47.683061]]]]}}, {"STATEFP": "1400000US53033005000", "COUNTYF": "033", "TRACTCE": "005000", "AFFGEOI": "1400000US53033005000", "GEOID": "53033005000", "NAME": "50", "LSAD": "CT", "ALAND": 757380, "AWATER": 0, "rowID": 9, "CRA_NAM": "Wallingford", "NEIGHBO": "Lake Union", "PUMA5CE": 11601, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.350176, 47.625431], [-122.339875, 47.625424], [-122.33859, 47.625731], [-122.338137, 47.62642], [-122.338438, 47.63802], [-122.338338, 47.63952], [-122.347233, 47.646796], [-122.354463, 47.649932], [-122.360539, 47.65292], [-122.367339, 47.65642], [-122.367132, 47.657803], [-122.365038, 47.657759], [-122.36621, 47.65927], [-122.366179, 47.668652], [-122.357361, 47.668674], [-122.357137, 47.66503], [-122.355412, 47.665004], [-122.347234, 47.664991], [-122.336411, 47.665033], [-122.328269, 47.665001], [-122.329541, 47.667902], [-122.328267, 47.667903], [-122.328214, 47.67228], [-122.317365, 47.672013], [-122.317405, 47.664936], [-122.31782, 47.656887], [-122.320292, 47.652851], [-122.322227, 47.653024], [-122.326537, 47.65032], [-122.337538, 47.63972], [-122.323463, 47.639725], [-122.322623, 47.638003], [-122.321354, 47.639541], [-122.321152, 47.635025], [-122.319936, 47.633549], [-122.320211, 47.630488], [-122.322339, 47.6304], [-122.322369, 47.628666], [-122.3266, 47.626961], [-122.326605, 47.625117], [-122.32814, 47.624904], [-122.327855, 47.618495], [-122.327882, 47.616632], [-122.328848, 47.61626], [-122.332952, 47.614519], [-122.337362, 47.612679], [-122.337495, 47.612621], [-122.339594, 47.611627], [-122.343496, 47.613934], [-122.351362, 47.618585], [-122.347605, 47.620714], [-122.347648, 47.624442], [-122.351489, 47.624568], [-122.350176, 47.625431]]]]}}, {"STATEFP": "1400000US53033009100", "COUNTYF": "033", "TRACTCE": "009100", "AFFGEOI": "1400000US53033009100", "GEOID": "53033009100", "NAME": "91", "LSAD": "CT", "ALAND": 418834, "AWATER": 0, "rowID": 10, "CRA_NAM": "Pioneer Square/International District", "NEIGHBO": "Downtown", "PUMA5CE": 11603, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.324516, 47.601705], [-122.320739, 47.601699], [-122.316783, 47.601692], [-122.317257, 47.595819], [-122.327718, 47.59581], [-122.327669, 47.599193], [-122.339571, 47.59922], [-122.34117, 47.6021702], [-122.3449386, 47.6091209], [-122.3539174, 47.6139509], [-122.3618236, 47.6187252], [-122.361113, 47.619869], [-122.359569, 47.618784], [-122.351362, 47.618585], [-122.343496, 47.613934], [-122.339594, 47.611627], [-122.337495, 47.612621], [-122.337362, 47.612679], [-122.331148, 47.605837], [-122.327658, 47.601715], [-122.324516, 47.601705]]]]}}, {"STATEFP": "1400000US53033012100", "COUNTYF": "033", "TRACTCE": "012100", "AFFGEOI": "1400000US53033012100", "GEOID": "53033012100", "NAME": "121", "LSAD": "CT", "ALAND": 1721296, "AWATER": 1399504, "rowID": 11, "CRA_NAM": "Arbor Heights", "NEIGHBO": "Southwest", "PUMA5CE": 11605, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.376887, 47.517486], [-122.3714, 47.517424], [-122.370877, 47.508199], [-122.370561, 47.503866], [-122.3738, 47.500834], [-122.375652, 47.496434], [-122.386637, 47.50222], [-122.393974, 47.509683], [-122.396538, 47.51522], [-122.398805, 47.517437], [-122.3952015, 47.5201544], [-122.393938, 47.52482], [-122.401104, 47.529908], [-122.396729, 47.535479], [-122.3978951, 47.5399305], [-122.399438, 47.54582], [-122.398338, 47.55012], [-122.402364, 47.557321], [-122.4051344, 47.5607766], [-122.409739, 47.56652], [-122.409839, 47.56892], [-122.421139, 47.57602], [-122.401839, 47.58392], [-122.387139, 47.59572], [-122.381738, 47.59392], [-122.381175, 47.590356], [-122.3761981, 47.5858799], [-122.376937, 47.585426], [-122.377637, 47.581045], [-122.376683, 47.580273], [-122.377104, 47.571182], [-122.376086, 47.571173], [-122.376191, 47.564075], [-122.376278, 47.553779], [-122.376309, 47.551959], [-122.376577, 47.539218], [-122.37836, 47.539244], [-122.378381, 47.535609], [-122.381966, 47.53499], [-122.381901, 47.526168], [-122.379337, 47.526135], [-122.379442, 47.521087], [-122.376764, 47.521068], [-122.376887, 47.517486]]]]}}, {"STATEFP": "1400000US53033010702", "COUNTYF": "033", "TRACTCE": "010702", "AFFGEOI": "1400000US53033010702", "GEOID": "53033010702", "NAME": "107.02", "LSAD": "CT", "ALAND": 784451, "AWATER": 0, "rowID": 12, "CRA_NAM": "High Point", "NEIGHBO": "Delridge Neighborhoods", "PUMA5CE": 11605, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.342183, 47.540351], [-122.337025, 47.53736], [-122.336487, 47.534293], [-122.334699, 47.534407], [-122.334698, 47.530153], [-122.333742, 47.526661], [-122.334818, 47.525424], [-122.33436, 47.520818], [-122.336303, 47.521242], [-122.340134, 47.517277], [-122.355167, 47.51738], [-122.358557, 47.517347], [-122.358564, 47.515528], [-122.360495, 47.515528], [-122.360542, 47.51736], [-122.3714, 47.517424], [-122.376887, 47.517486], [-122.376764, 47.521068], [-122.379442, 47.521087], [-122.379337, 47.526135], [-122.381901, 47.526168], [-122.381966, 47.53499], [-122.378381, 47.535609], [-122.37836, 47.539244], [-122.376577, 47.539218], [-122.376309, 47.551959], [-122.376278, 47.553779], [-122.376191, 47.564075], [-122.376086, 47.571173], [-122.377104, 47.571182], [-122.376683, 47.580273], [-122.377637, 47.581045], [-122.376937, 47.585426], [-122.3761981, 47.5858799], [-122.370167, 47.583087], [-122.368538, 47.584881], [-122.362125, 47.583802], [-122.355945, 47.587329], [-122.3447124, 47.5906889], [-122.344428, 47.57392], [-122.344632, 47.572209], [-122.347438, 47.565328], [-122.347237, 47.56302], [-122.342737, 47.55622], [-122.338436, 47.546222], [-122.335074, 47.542687], [-122.33918, 47.540135], [-122.342183, 47.540351]]]]}}, {"STATEFP": "1400000US53033002100", "COUNTYF": "033", "TRACTCE": "002100", "AFFGEOI": "1400000US53033002100", "GEOID": "53033002100", "NAME": "21", "LSAD": "CT", "ALAND": 1365469, "AWATER": 0, "rowID": 13, "CRA_NAM": "Wedgwood/View Ridge", "NEIGHBO": "Northeast", "PUMA5CE": 11602, "type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": [[[[-122.285036, 47.64752], [-122.285326, 47.642459], [-122.289644, 47.64162], [-122.292365, 47.642124], [-122.294313, 47.640733], [-122.293813, 47.63825], [-122.294475, 47.634834], [-122.29243, 47.632279], [-122.293448, 47.628324], [-122.2925, 47.625977], [-122.295119, 47.624205], [-122.295529, 47.625139], [-122.295117, 47.626668], [-122.29901, 47.629644], [-122.299428, 47.632264], [-122.312498, 47.632332], [-122.313588, 47.637411], [-122.316037, 47.639557], [-122.321354, 47.639541], [-122.322623, 47.638003], [-122.323463, 47.639725], [-122.337538, 47.63972], [-122.326537, 47.65032], [-122.322227, 47.653024], [-122.320292, 47.652851], [-122.31782, 47.656887], [-122.317405, 47.664936], [-122.317365, 47.672013], [-122.317365, 47.675828], [-122.317489, 47.683061], [-122.317586, 47.688549], [-122.313445, 47.688516], [-122.312233, 47.690339], [-122.308171, 47.690311], [-122.305606, 47.692561], [-122.3056, 47.697241], [-122.303319, 47.70027], [-122.302553, 47.70117], [-122.290704, 47.70112], [-122.290876, 47.704783], [-122.280939, 47.704663], [-122.278314, 47.705077], [-122.277652, 47.703881], [-122.277655, 47.6974], [-122.276689, 47.696155], [-122.271836, 47.69462], [-122.272336, 47.69732], [-122.258708, 47.697694], [-122.255062, 47.696866], [-122.25105, 47.693615], [-122.243423, 47.689524], [-122.235261, 47.688545], [-122.233572, 47.689363], [-122.231588, 47.689098], [-122.230403, 47.684188], [-122.229681, 47.668681], [-122.230229, 47.666003], [-122.231924, 47.663757], [-122.235832, 47.660633], [-122.245926, 47.656132], [-122.25103, 47.653346], [-122.256908, 47.647229], [-122.285036, 47.64752]]]]}}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+
+
+<div id="chart"></div>
+    <div id="text">
+        <h1>Which neighborhoods in Seattle have the highest concentration of houses for sale?</h1>
+        <p>With this graph, I aim to address the question, "Which neighborhoods in Seattle have the highest concentration of houses for sale?" I found this data available on the web, containing houses for sale between 2014 and 2015 in Seattle. I wanted to explore geospatially where there was the highest concentration of houses for sale. It is evident on this map that the northern part of the city has the highest concentration of points (houses for sale). This could indicate a greater population expansion towards the north. Additionally, I represented the house prices in three colors, revealing that not only are there more houses for sale in the north of Seattle, but they also have a higher price. Finally, the points have two size options, indicating the size of the houses for sale. This allows us to see that in the north of Seattle, the majority of houses for sale have more than 4000 square feet for living. \n
+
+Design choices: With a geoshape representing the neighborhoods in Seattle and circles marking individual houses. The circle size corresponds to square footage, and the color represents the price range, offering a spatial perspective on the housing market.\n
+
+- Color: I chose a gradually increasing scale of only 3 colors, making it easy to see where the most expensive houses are located (in the north) and the more affordable ones (in the south).\n
+- Size: The size has only two options, small and large points, making it easy for viewers to compare and allowing them to see the linear relationship between the larger the sqft_living, the higher the house price.\n
+- Map: The map allows us to spatially locate houses for sale and helps answer the question, "Which neighborhoods in Seattle have the highest concentration of houses for sale?" in the northern part of the city! \n
+- Interactions: The bar chart is interactive with the same brush selection, enabling users to see how the price distribution changes based on the selected region on the map. This dual-chart setup not only provides a detailed view of housing attributes but also allows users to understand how the concentration of houses varies across neighborhoods in Seattle.</p>
+    </div>
+    <script>
+        const spec = {  /* Your Vega-Lite specification here */  };
+        vegaEmbed('#chart', spec)
+        .catch(console.error);
+    </script>
+
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
